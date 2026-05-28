@@ -8,13 +8,12 @@
         body {
             font-family: 'Google Sans', Arial, sans-serif;
             line-height: 1.35;
-            color: #2D3748; /* Gris oscuro para máxima legibilidad corporativa[cite: 1] */
-            background-color: #f4f7f6; /* Fondo sutilmente verdoso/grisáceo[cite: 1] */
+            color: #000000; /* Negro de la paleta para máxima legibilidad */
+            background-color: #E0E0E0; /* Gris claro de la paleta para fondo general */
             margin: 0;
-            padding: 20px 10px; /* Reducido para pantallas móviles */
+            padding: 20px 10px;
         }
         
-        /* Ajuste de padding en desktop mediante Media Queries */
         @media (min-width: 768px) {
             body {
                 padding: 40px 20px;
@@ -24,11 +23,11 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: #ffffff;
-            padding: 20px; /* Menor espacio interno en móviles para ganar pantalla */
+            background: #FFFFFF; /* Blanco puro de la paleta para el contenedor */
+            padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0, 59, 70, 0.05), 0 4px 6px -2px rgba(0, 59, 70, 0.03); /*[cite: 1] */
-            border-top: 5px solid #003B46; /* Color primario en el borde superior[cite: 1] */
+            box-shadow: 0 10px 15px -3px rgba(54, 76, 228, 0.05), 0 4px 6px -2px rgba(54, 76, 228, 0.03);
+            border-top: 5px solid #364CE4; /* Azul violáceo como acento principal */
             box-sizing: border-box;
         }
         
@@ -39,12 +38,12 @@
         }
 
         h1 {
-            color: #003B46; /* Azul petróleo institucional profundo[cite: 1] */
-            font-size: 22px; /* Más chico en celulares para evitar desbordes */
+            color: #364CE4; /* Azul violáceo destacado */
+            font-size: 22px;
             font-weight: 700;
             margin-top: 0;
             margin-bottom: 10px;
-            border-bottom: 2px solid #66A5AD; /* Azul agua para corte[cite: 1] */
+            border-bottom: 2px solid #364CE4;
             padding-bottom: 15px;
         }
         
@@ -55,12 +54,12 @@
         }
 
         h2 {
-            color: #07575B; /* Verde azulado secundario[cite: 1] */
-            font-size: 18px; /* Adaptado para móvil */
+            color: #364CE4; /* Azul violáceo para títulos secundarios */
+            font-size: 18px;
             font-weight: 600;
             margin-top: 30px;
             margin-bottom: 15px;
-            border-left: 4px solid #92E3A9; /* Detalle menta/verde claro[cite: 1] */
+            border-left: 4px solid #364CE4;
             padding-left: 12px;
         }
         
@@ -72,11 +71,11 @@
         }
 
         h3 {
-            color: #003B46; /*[cite: 1] */
+            color: #364CE4; /* Azul violáceo para preguntas frecuentes */
             font-size: 15px;
             font-weight: 600;
             margin-top: 25px;
-            margin-bottom: 10px; /*[cite: 1] */
+            margin-bottom: 10px;
         }
         
         @media (min-width: 768px) {
@@ -86,8 +85,8 @@
         }
 
         p {
-            font-size: 14px; /* Un punto menos en móvil mejora la lectura en bloque */
-            color: #4A5568; /*[cite: 1] */
+            font-size: 14px;
+            color: #000000;
             margin-bottom: 15px;
         }
         
@@ -100,11 +99,11 @@
         ul {
             margin-top: 5px;
             margin-bottom: 15px;
-            padding-left: 20px; /*[cite: 1] */
+            padding-left: 20px;
         }
         li {
             font-size: 13px;
-            color: #4A5568; /*[cite: 1] */
+            color: #000000;
             margin-bottom: 8px;
         }
         
@@ -115,33 +114,33 @@
         }
 
         strong {
-            color: #003B46; /* Los destacados importantes usan el color de marca[cite: 1] */
+            color: #364CE4; /* Los textos fuertes e importantes adoptan el azul violáceo */
         }
         .highlight {
             font-weight: bold;
-            color: #07575B; /*[cite: 1] */
+            color: #364CE4;
         }
 
-        /* 📱 CONTENEDOR ADAPTATIVO PARA TABLAS EN CELULARES */
+        /* Contenedor adaptativo para tablas */
         .table-responsive {
             width: 100%;
-            overflow-x: auto; /* Activa el scroll horizontal si la pantalla es chica */
-            -webkit-overflow-scrolling: touch; /* Scroll suave en dispositivos iOS */
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             margin-top: 20px;
             margin-bottom: 35px;
             border-radius: 8px;
-            border: 1px solid #E2E8F0;
+            border: 1px solid #E0E0E0;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             overflow: hidden;
-            min-width: 550px; /* Garantiza que el contenido no se comprima feo en móvil */
+            min-width: 550px;
         }
         th {
-            background-color: #003B46; /* Cabecera de tabla alineada al color primario[cite: 1] */
-            color: #ffffff; /*[cite: 1] */
+            background-color: #364CE4; /* Fondo azul violáceo para la cabecera */
+            color: #FFFFFF; /* Texto blanco puro */
             font-weight: bold;
             text-align: left;
             padding: 12px;
@@ -152,8 +151,8 @@
         td {
             padding: 12px;
             font-size: 13px;
-            border-bottom: 1px solid #E2E8F0; /*[cite: 1] */
-            color: #4A5568; /*[cite: 1] */
+            border-bottom: 1px solid #E0E0E0;
+            color: #000000;
             text-align: left;
         }
         
@@ -165,15 +164,15 @@
         }
 
         tr:nth-child(even) td {
-            background-color: #F8FAFC; /* Alternancia limpia para lectura veloz[cite: 1] */
+            background-color: #F9F9F9; /* Alternancia gris muy suave */
         }
         tr:hover td {
-            background-color: #EBF8FA; /* Efecto hover sutil usando la paleta clara de la marca[cite: 1] */
+            background-color: #F0F2FF; /* Hover azul violáceo extremadamente suave */
         }
         .badge {
-            background-color: #92E3A9; /* Verde menta corporativo para el llamado de atención[cite: 1] */
-            color: #003B46; /* Contraste oscuro para lectura perfecta[cite: 1] */
-            padding: 4px 8px; /*[cite: 1] */
+            background-color: #364CE4; /* Fondo azul violáceo para llamadas de atención */
+            color: #FFFFFF; /* Contraste blanco */
+            padding: 4px 8px;
             border-radius: 4px;
             font-size: 11px;
             font-weight: bold;
@@ -182,7 +181,7 @@
             margin-bottom: 5px;
         }
 
-        /* Estilos para el Proceso de Pedido Personalizado */
+        /* Proceso de Pedido */
         .process-list {
             list-style-type: none;
             padding: 0;
@@ -190,7 +189,7 @@
         }
         .process-step {
             position: relative;
-            padding-left: 40px; /* Reducido levemente en móvil */
+            padding-left: 40px;
             margin-bottom: 25px;
         }
         
@@ -205,8 +204,8 @@
             position: absolute;
             left: 0;
             top: 2px;
-            background-color: #07575B;
-            color: #ffffff;
+            background-color: #364CE4; /* Círculos numéricos en azul violáceo */
+            color: #FFFFFF;
             width: 26px;
             height: 26px;
             border-radius: 50%;
@@ -227,7 +226,7 @@
 
         .step-title {
             font-weight: bold;
-            color: #003B46;
+            color: #364CE4;
             font-size: 14px;
             margin-bottom: 4px;
         }
@@ -238,15 +237,16 @@
             }
         }
 
+        /* Banner Destacado Costo Cero */
         .highlight-banner {
-            background-color: #EBF8FA;
-            border-left: 4px solid #92E3A9;
+            background-color: #F0F2FF; /* Fondo claro de tono azulado */
+            border-left: 4px solid #364CE4; /* Borde izquierdo azul violáceo */
             padding: 15px;
             border-radius: 0 8px 8px 0;
             margin-top: 20px;
             margin-bottom: 30px;
             display: flex;
-            flex-direction: row; /* Se mantiene en fila porque el icono es chico */
+            flex-direction: row;
             align-items: flex-start;
             gap: 12px;
             box-sizing: border-box;
@@ -254,6 +254,7 @@
         .highlight-banner p {
             margin: 0;
             font-size: 13px;
+            color: #000000;
         }
         
         @media (min-width: 768px) {
@@ -275,7 +276,6 @@
         <h2>1. Guía Técnica de Materiales, Texturas y Aplicaciones</h2>
         <p>Seleccioná el cuerpo, hilado y grosor textil ideal según las exigencias operativas de tu producto final o la identidad de tu campaña corporativa[cite: 1]:</p>
 
-        <!-- Envoltura responsiva para la Tabla 1 -->
         <div class="table-responsive">
             <table>
                 <thead>
@@ -308,7 +308,6 @@
         <h2>2. Componentes y Herrajes Disponibles</h2>
         <p>Trabajamos con variantes metálicas reforzadas de alta resistencia mecánica, diseñadas para adaptarse a las necesidades estéticas y operativas de cada desarrollo corporativo:</p>
 
-        <!-- Envoltura responsiva para la Tabla 2 -->
         <div class="table-responsive">
             <table>
                 <thead>
@@ -333,12 +332,11 @@
             </table>
         </div>
 
-        <h2>3. Production Personalizada y Mínimos de Compra (B2B)</h2>
+        <h2>3. Producción Personalizada y Mínimos de Compra (B2B)</h2>
         
         <h3>¿Realizan producciones con diseños e imágenes personalizadas?</h3>
         <p>Sí. Contamos con tecnología de impresión rotativa y sublimación digital continua para estampar la identidad de tu marca[cite: 1]. Podés enviarnos tu archivo si ya lo tenés desarrollado, o nuestro equipo técnico lo adaptará al área de impresión segura.</p>
 
-        <!-- Banner Destacado Costo Cero -->
         <div class="highlight-banner">
             <span style="font-size: 20px; line-height: 1;">🎨</span>
             <div>
