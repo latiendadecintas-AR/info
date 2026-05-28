@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Ayuda e Información Comercial - La Tienda de Cintas</title>
+    <style>
+        body {
+            font-family: 'Google Sans', Arial, sans-serif;
+            line-height: 1.35;
+            color: #2D3748; /* Gris oscuro para máxima legibilidad corporativa[cite: 1] */
+            background-color: #f4f7f6; /* Fondo sutilmente verdoso/grisáceo[cite: 1] */
+            margin: 0;
+            padding: 20px 10px; /* Reducido para pantallas móviles */
+        }
+        
+        /* Ajuste de padding en desktop mediante Media Queries */
+        @media (min-width: 768px) {
+            body {
+                padding: 40px 20px;
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px; /* Menor espacio interno en móviles para ganar pantalla */
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 59, 70, 0.05), 0 4px 6px -2px rgba(0, 59, 70, 0.03); /*[cite: 1] */
+            border-top: 5px solid #003B46; /* Color primario en el borde superior[cite: 1] */
+            box-sizing: border-box;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 40px;
+            }
+        }
+
+        h1 {
+            color: #003B46; /* Azul petróleo institucional profundo[cite: 1] */
+            font-size: 22px; /* Más chico en celulares para evitar desbordes */
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #66A5AD; /* Azul agua para corte[cite: 1] */
+            padding-bottom: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+        }
+
+        h2 {
+            color: #07575B; /* Verde azulado secundario[cite: 1] */
+            font-size: 18px; /* Adaptado para móvil */
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid #92E3A9; /* Detalle menta/verde claro[cite: 1] */
+            padding-left: 12px;
+        }
+        
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 20px;
+                margin-top: 35px;
+            }
+        }
+
+        h3 {
+            color: #003B46; /*[cite: 1] */
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 10px; /*[cite: 1] */
+        }
+        
+        @media (min-width: 768px) {
+            h3 {
+                font-size: 16px;
+            }
+        }
+
+        p {
+            font-size: 14px; /* Un punto menos en móvil mejora la lectura en bloque */
+            color: #4A5568; /*[cite: 1] */
+            margin-bottom: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            p {
+                font-size: 15px;
+            }
+        }
+
+        ul {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            padding-left: 20px; /*[cite: 1] */
+        }
+        li {
+            font-size: 13px;
+            color: #4A5568; /*[cite: 1] */
+            margin-bottom: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            li {
+                font-size: 14px;
+            }
+        }
+
+        strong {
+            color: #003B46; /* Los destacados importantes usan el color de marca[cite: 1] */
+        }
+        .highlight {
+            font-weight: bold;
+            color: #07575B; /*[cite: 1] */
+        }
+
+        /* 📱 CONTENEDOR ADAPTATIVO PARA TABLAS EN CELULARES */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto; /* Activa el scroll horizontal si la pantalla es chica */
+            -webkit-overflow-scrolling: touch; /* Scroll suave en dispositivos iOS */
+            margin-top: 20px;
+            margin-bottom: 35px;
+            border-radius: 8px;
+            border: 1px solid #E2E8F0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            min-width: 550px; /* Garantiza que el contenido no se comprima feo en móvil */
+        }
+        th {
+            background-color: #003B46; /* Cabecera de tabla alineada al color primario[cite: 1] */
+            color: #ffffff; /*[cite: 1] */
+            font-weight: bold;
+            text-align: left;
+            padding: 12px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 12px;
+            font-size: 13px;
+            border-bottom: 1px solid #E2E8F0; /*[cite: 1] */
+            color: #4A5568; /*[cite: 1] */
+            text-align: left;
+        }
+        
+        @media (min-width: 768px) {
+            th, td {
+                padding: 14px;
+                font-size: 14px;
+            }
+        }
+
+        tr:nth-child(even) td {
+            background-color: #F8FAFC; /* Alternancia limpia para lectura veloz[cite: 1] */
+        }
+        tr:hover td {
+            background-color: #EBF8FA; /* Efecto hover sutil usando la paleta clara de la marca[cite: 1] */
+        }
+        .badge {
+            background-color: #92E3A9; /* Verde menta corporativo para el llamado de atención[cite: 1] */
+            color: #003B46; /* Contraste oscuro para lectura perfecta[cite: 1] */
+            padding: 4px 8px; /*[cite: 1] */
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        /* Estilos para el Proceso de Pedido Personalizado */
+        .process-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0 35px 0;
+        }
+        .process-step {
+            position: relative;
+            padding-left: 40px; /* Reducido levemente en móvil */
+            margin-bottom: 25px;
+        }
+        
+        @media (min-width: 768px) {
+            .process-step {
+                padding-left: 45px;
+            }
+        }
+
+        .process-step::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            background-color: #07575B;
+            color: #ffffff;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        @media (min-width: 768px) {
+            .process-step::before {
+                width: 28px;
+                height: 28px;
+                font-size: 13px;
+            }
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: #003B46;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        @media (min-width: 768px) {
+            .step-title {
+                font-size: 15px;
+            }
+        }
+
+        .highlight-banner {
+            background-color: #EBF8FA;
+            border-left: 4px solid #92E3A9;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: row; /* Se mantiene en fila porque el icono es chico */
+            align-items: flex-start;
+            gap: 12px;
+            box-sizing: border-box;
+        }
+        .highlight-banner p {
+            margin: 0;
+            font-size: 13px;
+        }
+        
+        @media (min-width: 768px) {
+            .highlight-banner {
+                padding: 15px 20px;
+            }
+            .highlight-banner p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Información Institucional y Preguntas Frecuentes</h1>
+        <p>Bienvenido al centro de soporte operativo de <strong>La Tienda de Cintas</strong>. En esta sección consolidamos las especificaciones técnicas de nuestros materiales, políticas de personalización mayorista y lineamientos de facturación comercial para empresas, talleres y confeccionistas de toda la República Argentina[cite: 1].</p>
+
+        <h2>1. Guía Técnica de Materiales, Texturas y Aplicaciones</h2>
+        <p>Seleccioná el cuerpo, hilado y grosor textil ideal según las exigencias operativas de tu producto final o la identidad de tu campaña corporativa[cite: 1]:</p>
+
+        <!-- Envoltura responsiva para la Tabla 1 -->
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Variedad de Cinta</th>
+                        <th>Características Técnicas del Hilado</th>
+                        <th>Aplicación Comercial Recomendada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cinta de Poliéster Premium</strong></td>
+                        <td>Hilado satinado de alta densidad, suave al tacto y de superficie lisa. Absorción óptima de tinta para sublimación de logotipos de alta complejidad[cite: 1].</td>
+                        <td><span class="badge">Recomendado</span> Lanyards empresariales, acreditaciones para eventos corporativos y llaveros promocionales de mano[cite: 1].</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cinta Correa Común</strong></td>
+                        <td>Cuerpo medio con trama reforzada y textura visualmente rústica. Alta flexibilidad estructural y resistencia al roce mecánico diario[cite: 1].</td>
+                        <td>Correas de mochilas, bolsos urbanos, artículos de riñoneras y marroquinería general[cite: 1].</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cinta Correa Pesada</strong></td>
+                        <td>Grosor máximo con tejido de alta densidad estructural. Indeformable bajo tracción física y costuras de fuerza[cite: 1].</td>
+                        <td>Accesorios y pretales para mascotas, sujeción de equipajes pesados y cintas de remolque liviano[cite: 1].</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>2. Componentes y Herrajes Disponibles</h2>
+        <p>Trabajamos con variantes metálicas reforzadas de alta resistencia mecánica, diseñadas para adaptarse a las necesidades estéticas y operativas de cada desarrollo corporativo:</p>
+
+        <!-- Envoltura responsiva para la Tabla 2 -->
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Herraje</th>
+                        <th>Características Técnicas</th>
+                        <th>Aplicación Recomendada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Mosquetón común con anillo</strong></td>
+                        <td>Mecanismo de resorte clásico acoplado a un eslabón giratorio. Estructura de aleación niquelada de gran firmeza.</td>
+                        <td>Lanyards corporativos tradicionales, credenciales de uso diario en oficinas y llaveros comerciales.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mosquetón tipo anzuelo</strong></td>
+                        <td>Diseño estilizado con gancho de apertura rápida por presión lateral. Ofrece una estética moderna y de alta gama.</td>
+                        <td>Eventos especiales, congresos institucionales premium y lanzamientos de marca exclusivos.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>3. Production Personalizada y Mínimos de Compra (B2B)</h2>
+        
+        <h3>¿Realizan producciones con diseños e imágenes personalizadas?</h3>
+        <p>Sí. Contamos con tecnología de impresión rotativa y sublimación digital continua para estampar la identidad de tu marca[cite: 1]. Podés enviarnos tu archivo si ya lo tenés desarrollado, o nuestro equipo técnico lo adaptará al área de impresión segura.</p>
+
+        <!-- Banner Destacado Costo Cero -->
+        <div class="highlight-banner">
+            <span style="font-size: 20px; line-height: 1;">🎨</span>
+            <div>
+                <p><strong>¡Beneficio corporativo!</strong> El diseño técnico y el armado del archivo digital final para la producción de tus cintas <strong>no tiene ningún costo adicional</strong>. Nuestro departamento creativo adapta tu marca de forma bonificada.</p>
+            </div>
+        </div>
+
+        <h3>¿Cuáles son las cantidades mínimas requeridas para ordenar?</h3>
+        <p>Para garantizar costos de escala competitivos, estructuramos nuestros mínimos según el canal de compra[cite: 1]:</p>
+        <ul>
+            <li><span class="highlight">Para talleres de confección y sublimadores (Cinta en rollo continuo):</span> Desde solo <strong>1 rollo de 10 metros</strong> lineales por diseño[cite: 1].</li>
+            <li><span class="highlight">Para empresas e instituciones (Lanyards armados terminados):</span> Packs corporativos disponibles a partir de las <strong>100 unidades</strong> (incluye herrajes a elección)[cite: 1].</li>
+        </ul>
+
+        <h3>¿En qué formato técnico se debe enviar el diseño original?</h3>
+        <p>Para asegurar una definición nítida y evitar pixelados en el tejido, los archivos de los logotipos deben enviarse en formato vectorial puro: <strong>.AI (Adobe Illustrator), .PDF (Editable) o .EPS</strong>, con todas las tipografías e isotipos convertidos a curvas[cite: 1].</p>
+
+        <h2>4. Proceso de Pedidos Personalizados</h2>
+        <p>Con el fin de asegurar resultados exactos y evitar errores en los talleres de impresión, implementamos una secuencia ordenada de validación comercial:</p>
+
+        <ul class="process-list">
+            <li class="process-step" data-step="1">
+                <div class="step-title">Configuración y Solicitud</div>
+                <p style="margin: 0;">El cliente selecciona el volumen del pedido, el ancho textil deseado y la tipología de herraje metálico (mosquetón común o anzuelo).</p>
+            </li>
+            <li class="process-step" data-step="2">
+                <div class="step-title">Envío de Identidad Visual</div>
+                <p style="margin: 0;">Se reciben los logotipos en formatos vectoriales editables para garantizar la máxima resolución y fidelidad de los colores en el proceso de transferencia.</p>
+            </li>
+            <li class="process-step" data-step="3">
+                <div class="step-title">Muestra Digital Bonificada</div>
+                <p style="margin: 0;">Nuestro equipo arma un boceto (mockup) a escala real sin cargo, donde se muestra cómo quedará distribuido el diseño en la cinta antes de pasar a producción.</p>
+            </li>
+            <li class="process-step" data-step="4">
+                <div class="step-title">Aprobación y Fabricación</div>
+                <p style="margin: 0;">Una vez verificado y aprobado el boceto por parte del cliente, la orden ingresa de inmediato a la línea de sublimado, corte y ensamble final.</p>
+            </li>
+        </ul>
+
+        <h2>5. Plazos de Fabricación, Tiempos de Entrega y Logística</h2>
+
+        <h3>¿Cuánto demora la producción y el posterior despacho de mi pedido?</h3>
+        <p>El ciclo de entrega se compone de dos plazos independientes[cite: 1]:</p>
+        <ul>
+            <li><strong>Plazo de Producción Interna:</strong> Los insumos estándar en stock y los rollos sin impresión se despachan en un período de 24 a 48 horas hábiles[cite: 1]. Para producciones personalizadas de lanyards o rollos sublimados a pedido, el tiempo estimado de fabricación se coordina entre los 5 y 7 días hábiles posteriores a la aprobación final del diseño digital por parte del cliente[cite: 1].</li>
+            <li><strong>Plazo de Distribución Logística:</strong> Efectuamos envíos a todas las provincias de Argentina mediante los operadores logísticos líderes del sector[cite: 1]. Los tiempos de tránsito en carretera varían entre 3 y 6 días hábiles dependiendo de la rigurosidad del destino final[cite: 1].</li>
+        </ul>
+
+        <h2>6. Gestión Fiscal, Facturación y Cuentas Mayoristas</h2>
+
+        <h3>¿Emiten Factura A para transacciones corporativas?</h3>
+        <p>Sí[cite: 1]. Somos una empresa registrada y emitimos de forma reglamentaria <strong>Factura A y Factura B</strong>[cite: 1]. Si tu organización requiere un comprobante de tipo A, asegurate de ingresar el número de CUIT y la Razón Social correspondiente durante el proceso de checkout en el carrito de compras[cite: 1]. El sistema fiscal procesará el documento PDF de manera automatizada[cite: 1].</p>
+
+        <h3>¿Cómo puedo acceder a la tarifa de precios para Distribuidores?</h3>
+        <p>Si sos revendedor, fabricante del sector gráfico o una agencia con compras de gran volumen, hacé clic en la pestaña superior <span class="highlight">"Solicitar Cuenta Mayorista"</span>[cite: 1]. Una vez completado el formulario de alta con tu perfil comercial, nuestro departamento de ventas habilitará las escalas de descuentos automáticas para tu usuario dentro de la tienda en línea[cite: 1].</p>
+    </div>
+
+</body>
+</html>
