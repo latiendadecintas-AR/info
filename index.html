@@ -391,6 +391,17 @@
         <p>Para compras online a traves de nuestra tienda, se emite <strong>Factura C  </strong> de manera automatizada por nuestro sistema. Para pedidos coorporativos, por favor solicitar presupuesto con <strong>Factura A </strong>, por whatsapp.</p>
 
     </div>
+<script>
+        function enviarAlturaAEmpretienda() {
+            var alturaNode = document.documentElement.scrollHeight || document.body.scrollHeight;
+            // Le envía la altura exacta de forma segura a la pestaña padre (Empretienda)
+            window.parent.postMessage({ 'tipo': 'ajustarAlturaCintas', 'altura': alturaNode }, '*');
+        }
 
+        // Avisa la altura al cargar, al cambiar el tamaño de pantalla y cada tanto por las dudas
+        window.addEventListener('load', enviarAlturaAEmpretienda);
+        window.addEventListener('resize', enviarAlturaAEmpretienda);
+        setInterval(enviarAlturaAEmpretienda, 1000); 
+    </script>
 </body>
 </html>
