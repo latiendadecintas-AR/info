@@ -393,15 +393,24 @@
     </div>
 <script>
         function enviarAlturaAEmpretienda() {
-            var alturaNode = document.documentElement.scrollHeight || document.body.scrollHeight;
-            // Le envía la altura exacta de forma segura a la pestaña padre (Empretienda)
-            window.parent.postMessage({ 'tipo': 'ajustarAlturaCintas', 'altura': alturaNode }, '*');
+            // Buscamos la tarjeta principal que contiene todo el texto
+            var tarjetaContenedora = document.querySelector('.container');
+            if (tarjetaContenedora) {
+                // Medimos la tarjeta + sus márgenes externos calculados
+                var alturaRealHTML = tarjetaContenedora.offsetHeight + 40; 
+                
+                // Enviamos la info exacta a Empretienda
+                window.parent.postMessage({ 'tipo': 'ajustarAlturaCintas', 'altura': alturaRealHTML }, '*');
+            }
         }
 
-        // Avisa la altura al cargar, al cambiar el tamaño de pantalla y cada tanto por las dudas
-        window.addEventListener('load', enviarAlturaAEmpretienda);
+        // Avisa la altura solo cuando ocurren cambios reales de pantalla
+        window.addEventListener('load', function() {
+            setTimeout(enviarAlturaAEmpretienda, 200); // Pequeña espera para asegurar renderizado
+        });
         window.addEventListener('resize', enviarAlturaAEmpretienda);
-        setInterval(enviarAlturaAEmpretienda, 1000); 
     </script>
+</body>
+</html>
 </body>
 </html>
